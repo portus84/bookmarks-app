@@ -42,6 +42,8 @@ npm install
 npm run-script start:bundle-env
 ```
 
+open browser to this url: [http://localhost:4200](http://localhost:4200) 
+
 ## Instructions for login app
 For login on app use:
 > username: `user`\
