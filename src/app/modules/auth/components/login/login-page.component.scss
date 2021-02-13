@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap');
+
+:host ::ng-deep {
+
+  .login-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background .2s linear;
+
+    .login-cover-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+
+    .login-cover-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, .45) 0, rgba(0, 0, 0, .3)) no-repeat center;
+    }
+  }
+
+  .login {
+    width: 400px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin: 0 0 0 -200px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .mat-card {
+      background: rgb(255, 255, 255, 0.7);
+
+      .mat-form-field {
+        width: 100%;
+        min-width: 300px;
+      }
+
+      mat-card-title {
+        text-align: center;
+
+        &.title {
+          color: white;
+          font-family: 'Noto Sans HK', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+          font-size: 2rem;
+          text-shadow: -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+        }
+      }
+
+      .error {
+        padding: 16px;
+        width: 300px;
+        color: white;
+        background-color: red;
+      }
+
+      .button {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    .legend {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      margin-top: 10px
+    }
+  }
+}

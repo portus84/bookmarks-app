@@ -1,0 +1,46 @@
+<div>
+
+  <div class="login-cover">
+    <div class="login-cover-image" style="background-image: url(./assets/images/login-page/bg.png)"></div>
+    <div class="login-cover-bg"></div>
+  </div>
+
+  <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && login()" autocomplete="off">
+    <div class="login">
+      <mat-card>
+        <mat-card-title class="title">Bookmarks App</mat-card-title>
+        <mat-card-content>
+          <mat-form-field>
+            <input type="text" matInput
+                   [(ngModel)]="user.username"
+                   #username="ngModel"
+                   name="username"
+                   placeholder="Username" autocomplete="off" autofocus required>
+            <mat-error *ngIf="loginForm.submitted && username.errors?.required">
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="password" matInput
+                   [(ngModel)]="user.password"
+                   #password="ngModel"
+                   name="password"
+                   placeholder="Password" autocomplete="off" required>
+            <mat-error *ngIf="loginForm.submitted && password.errors?.required">
+              Please provide a password
+            </mat-error>
+          </mat-form-field>
+
+          <div class="button">
+            <button type="submit" mat-flat-button color="primary">Login</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="legend">
+        You must use username <span style="font-weight: 500">user</span> and password <span style="font-weight: 500">user</span>
+      </div>
+    </div>
+  </form>
+</div>

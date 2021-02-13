@@ -1,0 +1,45 @@
+
+:host {
+
+  .mat-toolbar {
+    .user-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .summary {
+        font-size: 0.8rem;
+        line-height: initial;
+        font-weight: normal;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .container {
+    margin: 3rem 100px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .2);
+
+    .header {
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .content {
+      padding: 10px;
+
+      .mat-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+
+}

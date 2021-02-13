@@ -1,0 +1,6 @@
+{
+  "watch": true,
+  "routes": "./json-server/routes.json",
+  "middlewares": "./json-server/middlewares.js",
+  "static": "./json-server/public/"
+}

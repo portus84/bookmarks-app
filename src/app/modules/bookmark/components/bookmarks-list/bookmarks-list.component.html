@@ -1,0 +1,67 @@
+<div>
+  <mat-toolbar color="primary">
+    <span>Bookmarks App</span>
+    <span class="spacer"></span>
+
+    <div class="user-info">
+      <div class="summary">
+        Welcome,<br/>
+        <span>{{loggedUser.firstName}} {{loggedUser.lastName}}</span>
+      </div>
+
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div class="container">
+    <div class="header">
+      <div>
+        <button mat-mini-fab color="primary" (click)="add()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+    <div class="content" *ngIf="(bookmarks$ | async) as bookmarks">
+      <ng-container *ngIf="bookmarks && Object.keys(bookmarks).length > 0; else noData">
+        <mat-selection-list [multiple]="false">
+          <ng-container *ngFor="let group of Object.keys(bookmarks); last as isLast">
+            <div mat-subheader>{{group}}</div>
+            <mat-list-option *ngFor="let bookmark of bookmarks[group]">
+              <div mat-line>
+                <div>
+                  <div>{{bookmark.name}}</div>
+                  <small><a [href]="bookmark.url" target="_blank">{{bookmark.url}}</a></small>
+                </div>
+
+                <div>
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="edit(bookmark)">
+                      <span>Edit</span>
+                    </button>
+                    <button mat-menu-item (click)="delete(bookmark)">
+                      <span>Delete</span>
+                    </button>
+                  </mat-menu>
+                </div>
+              </div>
+            </mat-list-option>
+            <mat-divider *ngIf="!isLast"></mat-divider>
+          </ng-container>
+        </mat-selection-list>
+      </ng-container>
+      <ng-template #noData>
+        <div style="margin-top: 5%; text-align: center">
+          <img src="assets/images/no-results.png" alt="No results"/>
+          <h3 class="font-weight-normal mb-3">No Bookmarks found for you</h3>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

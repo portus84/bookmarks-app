@@ -1,27 +1,48 @@
-# VtBookmarks
+# Bookmarks App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+## Solution
+The solution adopted involves the use of a backend service implemented by the `json-server` module listening on port 3000.\
+The service exposes CRUD functionality on the `bookmarks` resource and minimal `user` management like login.
 
-## Development server
+The application is divided into the following modules:
+1. `CoreModule`
+   The CoreModule should contain singleton services (which is usually the case), universal components and other features where there’s only once instance per application.
+2. `SharedModule`
+   The SharedModule is where any shared components, pipes/filters and services should go.\
+   For this app was used for manage libs modules, like angular material.
+3. `modules/AuthModule`
+   The AuthModule contains authentication features.
+4. `modules/BookmarkModule`
+   The BookmarkModule contains the features related to bookmark management.\
+   For this module was used **ngrx** and **redux pattern**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Screenshots
 
-## Code scaffolding
+![Login Page](docs/screenshots/screenshot-1.png)
+![Bookmarks List](docs/screenshots/screenshot-2.png)
+![Bookmark Dialog](docs/screenshots/screenshot-3.png)
+![Bookmarks List Action](docs/screenshots/screenshot-4.png)
+![Bookmarks List with no data](docs/screenshots/screenshot-5.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Instructions how to run the application
+```bash
+# clone the repo
+git clone https://github.com/portus84/bookmarks-app.git
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# change directory to repo
+cd bookmarks-app
 
-## Running end-to-end tests
+# Use npm or yarn to install the dependencies:
+npm install
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# start the server
+npm run-script start:bundle-env
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Instructions for login app
+For login on app use:
+> username: `user`\
+> password: `user`
