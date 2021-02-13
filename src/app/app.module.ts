@@ -19,16 +19,13 @@ import {EffectsModule} from '@ngrx/effects';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({
-      product: () => {
-      }
-    }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
-    ...[
-      EffectsModule.forRoot()
-    ],
     ...[
       AppRoutingModule
+    ],
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    ...[
+      StoreModule.forRoot({}),
+      EffectsModule.forRoot()
     ]
   ],
   providers: [

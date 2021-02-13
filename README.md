@@ -35,7 +35,7 @@ git clone https://github.com/portus84/bookmarks-app.git
 # change directory to repo
 cd bookmarks-app
 
-# Use npm or yarn to install the dependencies:
+# Use npm to install the dependencies:
 npm install
 
 # start the server
